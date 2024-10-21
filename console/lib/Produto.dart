@@ -1,15 +1,11 @@
 import 'enum.dart';
 
 abstract class Produto {
-  tpProduto tipoProduto;
-  
-  Produto (this.tipoProduto);
+  String nome;
+  double preco;
+  TipoProduto tipo;
 
-  double preco();
-  String nome();
-  
+  Produto(this.nome, this.preco, this.tipo);
 
-  void imprimeProduto(){
-    print("${tipoProduto.name} com área de ${preco()}");
-  }
+  void exibirDetalhes();
 }

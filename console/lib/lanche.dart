@@ -1,14 +1,17 @@
-import 'Produto.dart';
+import 'produto.dart';
 import 'enum.dart';
 
+class Lanche extends Produto {
+  List<String> ingredientes;
 
+  Lanche(String nome, double preco, this.ingredientes)
+      : super(nome, preco, TipoProduto.Comida);
 
-void main(List<String> args) {
-   List<Produto> formas = [];
-   formas.add (Quadrado(10));
-   formas.add (Retangulo(10, 5));
-   formas.add (Circulo(3));
-   formas.add (Triangulo(10, 5));
-  //  print("Area do Quadrado:${quadrado.calculaArea()}");
-  formas.forEach((forma)=>forma.imprimeForma);
+  @override
+  void exibirDetalhes() {
+    print('Nome: $nome');
+    print('Preço: R\$ ${preco.toStringAsFixed(1)}');
+    print('Ingredientes: ${ingredientes.join(', ')}');
+    print('Tipo: Comida\n');
+  }
 }

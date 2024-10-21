@@ -1,1 +1,4 @@
-enum tpProduto{comida, bebida}
+enum TipoProduto {
+  Comida,
+  Bebida,
+}

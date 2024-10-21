@@ -1,10 +1,17 @@
-import 'Produto.dart';
+import 'produto.dart';
 import 'enum.dart';
 
-class bebida extends Produto{
-  double sabor = 0;
+class Bebida extends Produto {
+  double volume;
 
-  bebida (this.sabor): super();
+  Bebida(String nome, double preco, this.volume)
+      : super(nome, preco, TipoProduto.Bebida);
 
+  @override
+  void exibirDetalhes() {
+    print('Nome: $nome');
+    print('Preço: R\$ ${preco.toStringAsFixed(1)}');
+    print('Volume: ${volume.toStringAsFixed(0)} ml');
+    print('Tipo: Bebida\n');
   }
-  
+}
